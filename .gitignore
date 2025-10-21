@@ -1,0 +1,121 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+
+# Build outputs
+dist/
+build/
+*.egg
+
+# Environment files
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Session data (generated at runtime)
+public/agent_outputs/
+public/downloads/
+
+# Large test files
+test_*.py
+test_*.html
+test_*.js
+debug_*.py
+debug_*.html
+
+# Demo files (optional - remove if you want to keep them)
+demo_*.py
+demo_*.html
+*_demo.html
+
+# Deployment artifacts
+server.js
+deploy-package.json
+deployment-manifest.json
+
+# Local development
+.cache/
+.parcel-cache/
+
+# Python virtual environment
+.venv/
+venv/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Secrets
+*.pem
+*.key
+*.cert
+
+# AWS
+.aws/
+
+# Docker
+.dockerignore
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory

@@ -1,0 +1,21 @@
+default_agent: mcp_server
+agents:
+  mcp_server:
+    name: mcp_server
+    entrypoint: mcp_server.py
+    platform: linux/arm64
+    container_runtime: none
+    requirements_file: mcp_requirements.txt
+    aws:
+      execution_role_auto_create: true
+      account: '915110216972'
+      region: us-east-1
+      ecr_auto_create: true
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: MCP
+      observability:
+        enabled: true
+    memory:
+      mode: DISABLED

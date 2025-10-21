@@ -1,0 +1,110 @@
+default_agent: market_campaign
+agents:
+  market_campaign:
+    name: market_campaign
+    entrypoint: market_campaign.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::915110216972:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-2b4dcb874b
+      execution_role_auto_create: false
+      account: '915110216972'
+      region: us-east-1
+      ecr_repository: 915110216972.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-market_campaign
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: market_campaign-eDNi5CCy51
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:915110216972:runtime/market_campaign-eDNi5CCy51
+      agent_session_id: fe77f054-ec12-42d0-b92c-a57a3b897cda
+    codebuild:
+      project_name: bedrock-agentcore-market_campaign-builder
+      execution_role: arn:aws:iam::915110216972:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-2b4dcb874b
+      source_bucket: bedrock-agentcore-codebuild-sources-915110216972-us-east-1
+    memory:
+      mode: STM_ONLY
+      memory_id: market_campaign_mem-P6WBDWEkuX
+      memory_arn: arn:aws:bedrock-agentcore:us-east-1:915110216972:memory/market_campaign_mem-P6WBDWEkuX
+      memory_name: market_campaign_mem
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+  mcp_server:
+    name: mcp_server
+    entrypoint: C:/Users/ishas/Downloads/Marketing Campaign/mcp_server.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::915110216972:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-f6e3659767
+      execution_role_auto_create: false
+      account: '915110216972'
+      region: us-east-1
+      ecr_repository: 915110216972.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-mcp_server
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: MCP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: mcp_server-UilybiApxn
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:915110216972:runtime/mcp_server-UilybiApxn
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-mcp_server-builder
+      execution_role: arn:aws:iam::915110216972:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-f6e3659767
+      source_bucket: bedrock-agentcore-codebuild-sources-915110216972-us-east-1
+    memory:
+      mode: STM_ONLY
+      memory_id: mcp_server_mem-DXhyfZ3hUv
+      memory_arn: arn:aws:bedrock-agentcore:us-east-1:915110216972:memory/mcp_server_mem-DXhyfZ3hUv
+      memory_name: mcp_server_mem
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+  final_campaign:
+    name: final_campaign
+    entrypoint: final_campaign.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::915110216972:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-e3af53cafb
+      execution_role_auto_create: false
+      account: '915110216972'
+      region: us-east-1
+      ecr_repository: 915110216972.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-final_campaign
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: final_campaign-iYkRvAGISO
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:915110216972:runtime/final_campaign-iYkRvAGISO
+      agent_session_id: 9d2e3723-f7e4-40ea-8373-91cfc687252d
+    codebuild:
+      project_name: bedrock-agentcore-final_campaign-builder
+      execution_role: arn:aws:iam::915110216972:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-e3af53cafb
+      source_bucket: bedrock-agentcore-codebuild-sources-915110216972-us-east-1
+    memory:
+      mode: STM_ONLY
+      memory_id: final_campaign_mem-7ZXvnBCBMz
+      memory_arn: arn:aws:bedrock-agentcore:us-east-1:915110216972:memory/final_campaign_mem-7ZXvnBCBMz
+      memory_name: final_campaign_mem
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
