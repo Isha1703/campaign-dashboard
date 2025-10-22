@@ -340,7 +340,8 @@ export class ApiService {
 
     try {
       const response = await apiClient.get(`/session/${sessionId}/agent/${agentName}`);
-      return response.data.result;
+      // Backend returns: {success, session_id, agent, data: {agent, timestamp, result}}
+      return response.data;
     } catch (error) {
       console.error(`Failed to get ${agentName} result - using mock service`);
       return MockApiService.pollAgentResults(sessionId);
