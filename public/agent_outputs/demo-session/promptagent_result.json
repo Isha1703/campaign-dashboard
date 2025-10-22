@@ -1,0 +1,64 @@
+{
+  "audience_prompts": [
+    {
+      "audience": "Tech Enthusiasts",
+      "platforms": [
+        {
+          "platform": "LinkedIn",
+          "prompts": [
+            {
+              "ad_type": "image_ad",
+              "prompt": "Sleek modern workspace with innovative AI-powered device, professional setting, clean design, technology showcase",
+              "cta": "Discover Innovation"
+            },
+            {
+              "ad_type": "text_ad",
+              "prompt": "Transform your workflow with cutting-edge AI technology. Join thousands of professionals who've already made the switch to smarter productivity.",
+              "cta": "Learn More"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "audience": "Early Adopters",
+      "platforms": [
+        {
+          "platform": "Instagram",
+          "prompts": [
+            {
+              "ad_type": "video_ad",
+              "prompt": "Dynamic product reveal showcasing innovative features, modern aesthetic, exciting unboxing experience with smooth transitions",
+              "cta": "Get Early Access"
+            },
+            {
+              "ad_type": "image_ad",
+              "prompt": "Vibrant lifestyle shot featuring product in trendy urban setting, young professional using device, Instagram-worthy aesthetic",
+              "cta": "Shop Now"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "audience": "Business Decision Makers",
+      "platforms": [
+        {
+          "platform": "Facebook",
+          "prompts": [
+            {
+              "ad_type": "text_ad",
+              "prompt": "Increase team productivity by 40% with our enterprise solution. Trusted by Fortune 500 companies. ROI guaranteed within 90 days.",
+              "cta": "Request Demo"
+            },
+            {
+              "ad_type": "image_ad",
+              "prompt": "Professional boardroom setting with executives reviewing impressive analytics dashboard, business success, data-driven decisions",
+              "cta": "See Results"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "audiences": [
+    {
+      "name": "Tech Enthusiasts",
+      "demographics": "25-40 year old professionals interested in cutting-edge technology and innovation",
+      "platforms": [
+        {
+          "platform": "LinkedIn",
+          "reason": "Professional network ideal for B2B tech products and thought leadership"
+        }
+      ]
+    },
+    {
+      "name": "Early Adopters",
+      "demographics": "18-35 year olds who love trying new products and sharing experiences",
+      "platforms": [
+        {
+          "platform": "Instagram",
+          "reason": "Visual platform perfect for showcasing innovative products and lifestyle content"
+        }
+      ]
+    },
+    {
+      "name": "Business Decision Makers",
+      "demographics": "35-55 year old executives and managers seeking productivity solutions",
+      "platforms": [
+        {
+          "platform": "Facebook",
+          "reason": "Wide reach for professional audiences and targeted advertising capabilities"
+        }
+      ]
+    }
+  ]
+}

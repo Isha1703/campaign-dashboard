@@ -1,0 +1,52 @@
+{
+  "ads": [
+    {
+      "asset_id": "demo_ad_001",
+      "audience": "Tech Enthusiasts",
+      "platform": "LinkedIn",
+      "ad_type": "image_ad",
+      "content": "https://via.placeholder.com/1024x1024/4A90E2/ffffff?text=AI+Innovation+Workspace",
+      "status": "generated"
+    },
+    {
+      "asset_id": "demo_ad_002",
+      "audience": "Tech Enthusiasts",
+      "platform": "LinkedIn",
+      "ad_type": "text_ad",
+      "content": "Transform your workflow with cutting-edge AI technology. Join thousands of professionals who've already made the switch to smarter productivity. Our AI-powered solution integrates seamlessly with your existing tools, providing intelligent insights and automation that saves hours every day. Experience the future of work today.",
+      "status": "generated"
+    },
+    {
+      "asset_id": "demo_ad_003",
+      "audience": "Early Adopters",
+      "platform": "Instagram",
+      "ad_type": "video_ad",
+      "content": "https://via.placeholder.com/1280x720/E94B3C/ffffff?text=Product+Reveal+Video",
+      "status": "generated"
+    },
+    {
+      "asset_id": "demo_ad_004",
+      "audience": "Early Adopters",
+      "platform": "Instagram",
+      "ad_type": "image_ad",
+      "content": "https://via.placeholder.com/1024x1024/F39C12/ffffff?text=Lifestyle+Product+Shot",
+      "status": "generated"
+    },
+    {
+      "asset_id": "demo_ad_005",
+      "audience": "Business Decision Makers",
+      "platform": "Facebook",
+      "ad_type": "text_ad",
+      "content": "Increase team productivity by 40% with our enterprise solution. Trusted by Fortune 500 companies. ROI guaranteed within 90 days. Our comprehensive platform provides real-time analytics, automated workflows, and intelligent recommendations that drive measurable business results. Schedule a personalized demo to see how we can transform your operations.",
+      "status": "generated"
+    },
+    {
+      "asset_id": "demo_ad_006",
+      "audience": "Business Decision Makers",
+      "platform": "Facebook",
+      "ad_type": "image_ad",
+      "content": "https://via.placeholder.com/1024x1024/27AE60/ffffff?text=Executive+Dashboard+Analytics",
+      "status": "generated"
+    }
+  ]
+}

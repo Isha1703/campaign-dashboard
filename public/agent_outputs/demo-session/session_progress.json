@@ -1,0 +1,14 @@
+{
+  "session_id": "demo-session",
+  "started_at": "2024-10-22T10:00:00.000000",
+  "agents_completed": [
+    "AudienceAgent",
+    "BudgetAgent",
+    "PromptAgent",
+    "ContentGenerationAgent"
+  ],
+  "current_stage": "completed",
+  "progress_percentage": 100,
+  "status": "completed",
+  "last_updated": "2024-10-22T10:08:00.000000"
+}
