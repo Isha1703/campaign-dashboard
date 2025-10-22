@@ -94,6 +94,7 @@ ENV/
 *.pem
 *.key
 *.cert
+real_mcp_gateway_config.json
 
 # AWS
 .aws/

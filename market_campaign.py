@@ -290,19 +290,34 @@ def get_mcp_token():
     return None
 
 def create_streamable_http_transport():
-    """Create streamable HTTP transport with OAuth token"""
+    """Create streamable HTTP transport with AWS SigV4 authentication"""
     try:
-        from mcp_utils import load_mcp_config
         from mcp.client.streamable_http import streamablehttp_client
+        import boto3
+        from botocore.auth import SigV4Auth
+        from botocore.awsrequest import AWSRequest
         
-        config = load_mcp_config()
-        if config:
-            gateway_url = config["gateway_url"]
-            token = get_mcp_token()
-            if token:
-                return streamablehttp_client(gateway_url, headers={"Authorization": f"Bearer {token}"})
+        # Use hardcoded gateway URL
+        gateway_url = "https://real-mcp-marketing-gateway-cfc6b1d0-6mdqt3b1cg.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp"
+        
+        # Get AWS credentials from boto3 session
+        session = boto3.Session()
+        credentials = session.get_credentials()
+        
+        if credentials:
+            # Create AWS SigV4 signed headers
+            request = AWSRequest(method='POST', url=gateway_url)
+            SigV4Auth(credentials, 'bedrock-agentcore', 'us-east-1').add_auth(request)
+            
+            print(f"✅ Using AWS SigV4 auth for MCP gateway")
+            return streamablehttp_client(gateway_url, headers=dict(request.headers))
+        else:
+            print("❌ No AWS credentials found")
+            return None
     except Exception as e:
         print(f"❌ Error creating MCP transport: {e}")
+        import traceback
+        traceback.print_exc()
     return None
 
 def invoke_content_generation_with_mcp(prompt: str) -> dict:
