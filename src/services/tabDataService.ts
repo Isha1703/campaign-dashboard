@@ -82,12 +82,14 @@ class TabDataService {
    * Extract and format audience data from API response
    */
   private extractAudienceData(apiResponse: any): any {
-    if (!apiResponse?.data?.result?.audiences) {
-      console.warn('No audience data found in API response');
+    // API returns: {success, session_id, agent, data: {agent, timestamp, result}}
+    const result = apiResponse?.data?.data?.result || apiResponse?.data?.result;
+    if (!result?.audiences) {
+      console.warn('No audience data found in API response', apiResponse);
       return null;
     }
 
-    const audiences = apiResponse.data.result.audiences;
+    const audiences = result.audiences;
     return {
       audiences: audiences.map((audience: any) => ({
         name: audience.name,
@@ -101,12 +103,13 @@ class TabDataService {
    * Extract and format budget data from API response
    */
   private extractBudgetData(apiResponse: any): any {
-    if (!apiResponse?.data?.result) {
-      console.warn('No budget data found in API response');
+    const result = apiResponse?.data?.data?.result || apiResponse?.data?.result;
+    if (!result) {
+      console.warn('No budget data found in API response', apiResponse);
       return null;
     }
 
-    const budgetData = apiResponse.data.result;
+    const budgetData = result;
     return {
       total_budget: budgetData.total_budget || 0,
       allocations: budgetData.allocations || []
@@ -117,13 +120,14 @@ class TabDataService {
    * Extract and format prompt data from API response
    */
   private extractPromptData(apiResponse: any): any {
-    if (!apiResponse?.data?.result?.audience_prompts) {
-      console.warn('No prompt data found in API response');
+    const result = apiResponse?.data?.data?.result || apiResponse?.data?.result;
+    if (!result?.audience_prompts) {
+      console.warn('No prompt data found in API response', apiResponse);
       return null;
     }
 
     return {
-      audience_prompts: apiResponse.data.result.audience_prompts
+      audience_prompts: result.audience_prompts
     };
   }
 
@@ -131,12 +135,13 @@ class TabDataService {
    * Extract and format content data from API response
    */
   private extractContentData(apiResponse: any): any {
-    if (!apiResponse?.data?.result?.ads) {
-      console.warn('No content data found in API response');
+    const result = apiResponse?.data?.data?.result || apiResponse?.data?.result;
+    if (!result?.ads) {
+      console.warn('No content data found in API response', apiResponse);
       return null;
     }
 
-    const ads = apiResponse.data.result.ads;
+    const ads = result.ads;
     return {
       ads: ads,
       summary: {
