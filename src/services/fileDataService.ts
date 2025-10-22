@@ -55,10 +55,12 @@ class FileDataService {
 
     for (const agent of agentFiles) {
       try {
-        const data = await this.loadAgentFile(sessionId, agent.filename);
-        if (data) {
-          (sessionData as any)[agent.key] = data;
-          console.log(`✅ Loaded ${agent.key}:`, data.result);
+        const apiResponse = await this.loadAgentFile(sessionId, agent.filename);
+        if (apiResponse) {
+          // API returns: {success, session_id, agent, data: {agent, timestamp, result}}
+          const agentData = apiResponse.data || apiResponse;
+          (sessionData as any)[agent.key] = agentData;
+          console.log(`✅ Loaded ${agent.key}:`, agentData.result || agentData);
         }
       } catch (error) {
         console.warn(`⚠️ Could not load ${agent.key}:`, error);
