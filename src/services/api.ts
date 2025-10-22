@@ -12,9 +12,13 @@ import type {
 } from '../types';
 
 // Get API URL from environment variable or use default
+// For Amplify deployment, check if backend is available
 const API_BASE_URL = import.meta.env.VITE_API_URL 
   ? `${import.meta.env.VITE_API_URL}/api`
   : '/api';
+
+// Check if we're in Amplify environment (no backend available)
+const isAmplifyDeployment = window.location.hostname.includes('amplifyapp.com');
 
 // Default retry configuration
 const DEFAULT_RETRY_CONFIG: RetryConfig = {
@@ -349,6 +353,18 @@ export class ApiService {
       const response = await apiClient.get('/sessions');
       return response.data;
     } catch (error) {
+      // Fallback for Amplify: try to load from public directory
+      if (isAmplifyDeployment) {
+        try {
+          // Try to fetch the session list from public directory
+          const publicResponse = await fetch('/agent_outputs/sessions.json');
+          if (publicResponse.ok) {
+            return await publicResponse.json();
+          }
+        } catch (fallbackError) {
+          console.warn('Could not load sessions from public directory');
+        }
+      }
       const apiError = this.handleApiError(error as AxiosError, 'Failed to list sessions');
       throw apiError;
     }

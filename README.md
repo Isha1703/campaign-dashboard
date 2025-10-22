@@ -133,14 +133,49 @@ vercel
 # Deploy via Railway.app dashboard
 ```
 
-#### 🌐 AWS (30 minutes)
-See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed instructions.
+#### 🌐 AWS Amplify (Frontend Only)
 
-### Deployment Documentation
-- **[START_HERE.md](./START_HERE.md)** - Quick start guide
-- **[DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)** - Comprehensive deployment instructions
-- **[QUICK_DEPLOY.md](./QUICK_DEPLOY.md)** - Fast-track deployment
-- **[DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)** - Step-by-step checklist
+**Important**: AWS Amplify only hosts the static frontend. You need to deploy the backend separately.
+
+**Option 1: Demo Mode (No Backend Required)**
+```bash
+# Use .env.production for demo mode
+VITE_DEMO_MODE=true
+VITE_API_URL=
+```
+
+**Option 2: With Backend**
+1. Deploy backend to EC2, ECS, or Lambda
+2. Update `.env.production`:
+```bash
+VITE_DEMO_MODE=false
+VITE_API_URL=https://your-backend-url.com
+```
+
+**Current Amplify URL**: https://main.d296oiluscvwnx.amplifyapp.com
+
+#### 🐳 Full Stack Deployment (Recommended)
+
+For production with real campaigns, deploy both frontend and backend:
+
+**Backend Options:**
+- AWS EC2 with Docker
+- AWS ECS/Fargate
+- Railway.app (easiest)
+- Render.com
+- Fly.io
+
+**Quick Deploy with Railway:**
+```bash
+# Install Railway CLI
+npm install -g @railway/cli
+
+# Deploy backend
+railway up
+
+# Get backend URL and update frontend env
+VITE_API_URL=https://your-app.railway.app
+```
 
 ## 🔧 Configuration
 
