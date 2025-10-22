@@ -5,7 +5,7 @@ A professional, full-stack marketing campaign management platform with AI-powere
 ![Campaign Dashboard](https://img.shields.io/badge/Status-Production%20Ready-success)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 ![React](https://img.shields.io/badge/React-18.2-61dafb)
-![Python](https://img.shields.io/badge/Python-3.9+-3776ab)
+![Python](https://img.shields.io/badge/Python-3.11+-3776ab)
 
 ## ✨ Features
 
@@ -57,7 +57,7 @@ A professional, full-stack marketing campaign management platform with AI-powere
 
 ### Prerequisites
 - Node.js 18+
-- Python 3.9+
+- Python 3.11+
 - Docker (optional)
 - AWS Account (for S3 media storage)
 
@@ -263,7 +263,7 @@ campaign-dashboard/
 - Axios (HTTP client)
 
 ### Backend
-- Python 3.9+
+- Python 3.11+
 - FastAPI
 - AWS SDK (boto3)
 - AgentCore MCP

@@ -59,9 +59,11 @@ ssh -i your-key.pem ec2-user@your-instance
 git clone https://github.com/your-repo/campaign-dashboard.git
 cd campaign-dashboard
 
-# Run with Docker
+# Run with Docker (requires Python 3.11+)
 docker-compose up -d
 ```
+
+**Note**: Backend requires Python 3.11+ due to `strands-agents` dependency.
 
 **C. Render.com**
 1. Connect your GitHub repo
