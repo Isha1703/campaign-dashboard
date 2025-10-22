@@ -23,7 +23,7 @@ export interface SessionData {
 
 class FileDataService {
   private cache: Map<string, SessionData> = new Map();
-  private readonly baseUrl = '/agent_outputs';
+  private readonly baseUrl = `${import.meta.env.VITE_API_URL || ''}/api/session`;
 
   /**
    * Load all agent data for a session
@@ -87,14 +87,16 @@ class FileDataService {
    */
   private async loadAgentFile(sessionId: string, filename: string): Promise<AgentResult | null> {
     try {
-      // Try to read from public directory (Vite serves public/ as root)
-      const response = await fetch(`/agent_outputs/${sessionId}/${filename}`);
+      // Use API endpoint to fetch agent results
+      const agentName = filename.replace('_result.json', '').replace('agent', 'Agent');
+      const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${API_BASE_URL}/api/session/${sessionId}/agent/${agentName}`);
       if (response.ok) {
         const data = await response.json();
         console.log(`✅ Successfully loaded ${filename} for ${sessionId}`);
         return data;
       } else {
-        console.debug(`File not found: /agent_outputs/${sessionId}/${filename} (${response.status})`);
+        console.debug(`Agent result not found: ${agentName} for session ${sessionId} (${response.status})`);
       }
 
       return null;

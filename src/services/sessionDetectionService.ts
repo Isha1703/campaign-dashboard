@@ -147,7 +147,8 @@ class SessionDetectionService {
    */
   private async checkSessionHasContent(sessionId: string): Promise<boolean> {
     try {
-      const response = await fetch(`/agent_outputs/${sessionId}/contentgenerationagent_result.json`);
+      const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${API_BASE_URL}/api/session/${sessionId}/agent/ContentGenerationAgent`);
       if (response.ok) {
         const data = await response.json();
         return data.result?.ads?.length > 0;
@@ -180,7 +181,8 @@ class SessionDetectionService {
   async detectCampaignType(sessionId: string): Promise<string> {
     try {
       // Try to get audience data to determine campaign type
-      const response = await fetch(`/agent_outputs/${sessionId}/audienceagent_result.json`);
+      const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${API_BASE_URL}/api/session/${sessionId}/agent/AudienceAgent`);
       if (response.ok) {
         const data = await response.json();
         const audiences = data.result?.audiences || [];
