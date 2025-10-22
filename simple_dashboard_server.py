@@ -31,7 +31,8 @@ app = FastAPI(title="Marketing Campaign Dashboard", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://main.d296oiluscvwnx.amplifyapp.com/",
+         "https://main.d296oiluscvwnx.amplifyapp.com",
+        "https://companion-robots-traditional-disposal.trycloudflare.com",
         "http://localhost:5173",
     ],
     allow_credentials=True,
