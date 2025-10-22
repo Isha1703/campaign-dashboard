@@ -1,0 +1,140 @@
+{
+  "campaign_performance": {
+    "overall_metrics": {
+      "total_impressions": 125000,
+      "total_clicks": 3750,
+      "total_conversions": 450,
+      "overall_ctr": 3.0,
+      "overall_conversion_rate": 12.0,
+      "total_spend": 10000.0,
+      "total_revenue": 45000.0,
+      "roi": 350.0
+    },
+    "platform_performance": [
+      {
+        "platform": "LinkedIn",
+        "audience": "Tech Enthusiasts",
+        "impressions": 45000,
+        "clicks": 1800,
+        "conversions": 216,
+        "ctr": 4.0,
+        "conversion_rate": 12.0,
+        "spend": 4000.0,
+        "revenue": 21600.0,
+        "roi": 440.0,
+        "cost_per_click": 2.22,
+        "cost_per_conversion": 18.52
+      },
+      {
+        "platform": "Instagram",
+        "audience": "Early Adopters",
+        "impressions": 50000,
+        "clicks": 1500,
+        "conversions": 165,
+        "ctr": 3.0,
+        "conversion_rate": 11.0,
+        "spend": 3500.0,
+        "revenue": 16500.0,
+        "roi": 371.4,
+        "cost_per_click": 2.33,
+        "cost_per_conversion": 21.21
+      },
+      {
+        "platform": "Facebook",
+        "audience": "Business Decision Makers",
+        "impressions": 30000,
+        "clicks": 450,
+        "conversions": 69,
+        "ctr": 1.5,
+        "conversion_rate": 15.3,
+        "spend": 2500.0,
+        "revenue": 6900.0,
+        "roi": 176.0,
+        "cost_per_click": 5.56,
+        "cost_per_conversion": 36.23
+      }
+    ],
+    "audience_insights": [
+      {
+        "audience": "Tech Enthusiasts",
+        "engagement_score": 8.5,
+        "demographics": {
+          "age_range": "25-40",
+          "top_locations": ["San Francisco", "New York", "Seattle"],
+          "interests": ["AI", "Technology", "Innovation", "Productivity"]
+        },
+        "behavior_patterns": {
+          "peak_engagement_time": "9:00 AM - 11:00 AM",
+          "preferred_content": "Professional insights and case studies",
+          "device_usage": {
+            "desktop": 65,
+            "mobile": 30,
+            "tablet": 5
+          }
+        }
+      },
+      {
+        "audience": "Early Adopters",
+        "engagement_score": 7.8,
+        "demographics": {
+          "age_range": "18-35",
+          "top_locations": ["Los Angeles", "Austin", "Miami"],
+          "interests": ["Tech Gadgets", "Lifestyle", "Social Media", "Trends"]
+        },
+        "behavior_patterns": {
+          "peak_engagement_time": "7:00 PM - 10:00 PM",
+          "preferred_content": "Visual content and product demos",
+          "device_usage": {
+            "desktop": 20,
+            "mobile": 75,
+            "tablet": 5
+          }
+        }
+      },
+      {
+        "audience": "Business Decision Makers",
+        "engagement_score": 9.2,
+        "demographics": {
+          "age_range": "35-55",
+          "top_locations": ["New York", "Chicago", "Boston"],
+          "interests": ["Business Strategy", "ROI", "Enterprise Solutions", "Leadership"]
+        },
+        "behavior_patterns": {
+          "peak_engagement_time": "8:00 AM - 10:00 AM",
+          "preferred_content": "ROI data and testimonials",
+          "device_usage": {
+            "desktop": 70,
+            "mobile": 25,
+            "tablet": 5
+          }
+        }
+      }
+    ],
+    "top_performing_ads": [
+      {
+        "asset_id": "demo_ad_001",
+        "platform": "LinkedIn",
+        "ad_type": "image_ad",
+        "ctr": 4.2,
+        "conversion_rate": 13.5,
+        "engagement_score": 9.1
+      },
+      {
+        "asset_id": "demo_ad_003",
+        "platform": "Instagram",
+        "ad_type": "video_ad",
+        "ctr": 3.8,
+        "conversion_rate": 12.8,
+        "engagement_score": 8.7
+      },
+      {
+        "asset_id": "demo_ad_005",
+        "platform": "Facebook",
+        "ad_type": "text_ad",
+        "ctr": 2.1,
+        "conversion_rate": 16.2,
+        "engagement_score": 8.9
+      }
+    ]
+  }
+}

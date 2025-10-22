@@ -1,0 +1,149 @@
+{
+  "optimization_recommendations": {
+    "budget_reallocation": {
+      "current_allocation": {
+        "LinkedIn": 4000.0,
+        "Instagram": 3500.0,
+        "Facebook": 2500.0
+      },
+      "recommended_allocation": {
+        "LinkedIn": 4500.0,
+        "Instagram": 3800.0,
+        "Facebook": 1700.0
+      },
+      "reasoning": "LinkedIn shows highest ROI (440%) and conversion rate. Recommend increasing budget by 12.5%. Instagram performing well with strong engagement. Facebook has lower CTR but high conversion rate among engaged users - maintain reduced budget for qualified leads.",
+      "expected_roi_improvement": 15.5
+    },
+    "creative_improvements": [
+      {
+        "asset_id": "demo_ad_002",
+        "platform": "LinkedIn",
+        "current_performance": "Good CTR but lower conversion",
+        "recommendation": "Add specific ROI statistics and customer testimonials to increase credibility",
+        "expected_improvement": "18% increase in conversion rate"
+      },
+      {
+        "asset_id": "demo_ad_004",
+        "platform": "Instagram",
+        "current_performance": "Moderate engagement",
+        "recommendation": "Test carousel format with multiple product angles and user-generated content",
+        "expected_improvement": "25% increase in engagement"
+      },
+      {
+        "asset_id": "demo_ad_006",
+        "platform": "Facebook",
+        "current_performance": "Low CTR",
+        "recommendation": "A/B test with video format showing real dashboard demo and customer success stories",
+        "expected_improvement": "40% increase in CTR"
+      }
+    ],
+    "targeting_adjustments": [
+      {
+        "audience": "Tech Enthusiasts",
+        "platform": "LinkedIn",
+        "current_targeting": "Broad tech professionals",
+        "recommended_targeting": "Focus on AI/ML engineers, Product Managers, and CTOs at Series B+ startups",
+        "reasoning": "Analytics show highest engagement from senior technical roles at growth-stage companies"
+      },
+      {
+        "audience": "Early Adopters",
+        "platform": "Instagram",
+        "current_targeting": "18-35 tech interested",
+        "recommended_targeting": "Expand to tech influencers and early-stage startup founders aged 22-38",
+        "reasoning": "Strong viral potential and word-of-mouth from this segment"
+      },
+      {
+        "audience": "Business Decision Makers",
+        "platform": "Facebook",
+        "current_targeting": "35-55 executives",
+        "recommended_targeting": "Narrow to VP+ level at companies with 100-1000 employees in SaaS/Tech sectors",
+        "reasoning": "Higher conversion rate but lower volume - focus on quality over quantity"
+      }
+    ],
+    "ab_testing_suggestions": [
+      {
+        "test_name": "CTA Variation Test",
+        "platform": "LinkedIn",
+        "variants": [
+          "Discover Innovation",
+          "See How It Works",
+          "Start Free Trial"
+        ],
+        "expected_duration": "7 days",
+        "success_metric": "Conversion rate improvement > 10%"
+      },
+      {
+        "test_name": "Video Length Test",
+        "platform": "Instagram",
+        "variants": [
+          "6-second teaser",
+          "15-second demo",
+          "30-second story"
+        ],
+        "expected_duration": "10 days",
+        "success_metric": "Completion rate > 70%"
+      },
+      {
+        "test_name": "Social Proof Test",
+        "platform": "Facebook",
+        "variants": [
+          "ROI statistics focus",
+          "Customer testimonials focus",
+          "Industry awards focus"
+        ],
+        "expected_duration": "14 days",
+        "success_metric": "CTR improvement > 25%"
+      }
+    ],
+    "predicted_performance": {
+      "with_optimizations": {
+        "total_impressions": 135000,
+        "total_clicks": 4725,
+        "total_conversions": 580,
+        "overall_ctr": 3.5,
+        "overall_conversion_rate": 12.3,
+        "total_spend": 10000.0,
+        "total_revenue": 58000.0,
+        "roi": 480.0
+      },
+      "improvement_summary": {
+        "ctr_improvement": 16.7,
+        "conversion_improvement": 28.9,
+        "roi_improvement": 37.1,
+        "revenue_increase": 13000.0
+      }
+    },
+    "action_items": [
+      {
+        "priority": "High",
+        "action": "Reallocate budget to LinkedIn (+$500) and Instagram (+$300)",
+        "timeline": "Immediate",
+        "expected_impact": "15% ROI increase"
+      },
+      {
+        "priority": "High",
+        "action": "Launch A/B test for Facebook video ad format",
+        "timeline": "Within 48 hours",
+        "expected_impact": "40% CTR improvement on Facebook"
+      },
+      {
+        "priority": "Medium",
+        "action": "Refine LinkedIn targeting to senior technical roles",
+        "timeline": "Within 1 week",
+        "expected_impact": "12% conversion rate increase"
+      },
+      {
+        "priority": "Medium",
+        "action": "Add customer testimonials to LinkedIn text ads",
+        "timeline": "Within 1 week",
+        "expected_impact": "18% conversion improvement"
+      },
+      {
+        "priority": "Low",
+        "action": "Test carousel format on Instagram",
+        "timeline": "Within 2 weeks",
+        "expected_impact": "25% engagement increase"
+      }
+    ]
+  }
+}
