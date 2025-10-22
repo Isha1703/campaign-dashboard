@@ -280,6 +280,11 @@ ContentGenerationAgent = None
 
 def get_mcp_token():
     """Get OAuth token for MCP Gateway"""
+    # Check if MCP is disabled (for public demo mode)
+    if os.getenv("DISABLE_MCP", "false").lower() == "true":
+        print("⚠️ MCP is disabled - running in demo mode with placeholder content")
+        return None
+    
     try:
         from mcp_utils import load_mcp_config, get_oauth_token
         config = load_mcp_config()
@@ -291,6 +296,11 @@ def get_mcp_token():
 
 def create_streamable_http_transport():
     """Create streamable HTTP transport with AWS SigV4 authentication"""
+    # Check if MCP is disabled (for public demo mode)
+    if os.getenv("DISABLE_MCP", "false").lower() == "true":
+        print("⚠️ MCP transport disabled - demo mode active")
+        return None
+    
     try:
         from mcp.client.streamable_http import streamablehttp_client
         import boto3
