@@ -160,13 +160,13 @@ class FileMonitorService {
    */
   private async loadAgentResult(sessionId: string, agentName: string): Promise<AgentResult | null> {
     try {
-      // Fetch from the unified agent_outputs directory (served from public/)
-      const filename = `${agentName.toLowerCase()}_result.json`;
-      const url = `/agent_outputs/${sessionId}/${filename}`;
+      // Use API endpoint instead of direct file access
+      const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+      const url = `${API_BASE_URL}/api/session/${sessionId}/agent/${agentName}`;
       
       const response = await fetch(url);
       if (!response.ok) {
-        console.debug(`File not found: ${url} (${response.status})`);
+        console.debug(`Agent result not found: ${url} (${response.status})`);
         return null;
       }
       
