@@ -23,6 +23,9 @@ build/
 .env.*.local
 *.env
 
+# MCP Gateway config (contains secrets)
+real_mcp_gateway_config.json
+
 # IDE
 .vscode/
 .idea/

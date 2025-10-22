@@ -1,0 +1,9 @@
+{
+  "gateway_url": "https://your-gateway-url.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp",
+  "client_info": {
+    "client_id": "YOUR_CLIENT_ID_HERE",
+    "client_secret": "YOUR_CLIENT_SECRET_HERE",
+    "token_endpoint": "YOUR_TOKEN_ENDPOINT_HERE",
+    "scope": "mcp/invoke"
+  }
+}
