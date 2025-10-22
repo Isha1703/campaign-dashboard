@@ -11,7 +11,10 @@ import type {
   RetryConfig
 } from '../types';
 
-const API_BASE_URL = '/api';
+// Get API URL from environment variable or use default
+const API_BASE_URL = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL}/api`
+  : '/api';
 
 // Default retry configuration
 const DEFAULT_RETRY_CONFIG: RetryConfig = {
