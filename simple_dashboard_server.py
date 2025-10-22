@@ -52,6 +52,7 @@ os.makedirs(os.path.join(public_dir, "media"), exist_ok=True)
 
 app.mount("/downloads", StaticFiles(directory=downloads_dir), name="downloads")
 app.mount("/public", StaticFiles(directory=public_dir), name="public")
+app.mount("/agent_outputs", StaticFiles(directory=os.path.join(public_dir, "agent_outputs")), name="agent_outputs")
 
 # Pydantic models
 class CampaignStartRequest(BaseModel):
