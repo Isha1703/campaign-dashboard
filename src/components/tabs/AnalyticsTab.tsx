@@ -72,17 +72,18 @@ const AnalyticsTab: React.FC<AnalyticsTabProps> = ({
 
       setIsLoading(true);
       try {
-        // Try to load from JSON file directly
-        const response = await fetch(`/agent_outputs/${sessionId}/analyticsagent_result.json`);
+        // Use backend API to load analytics data
+        const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+        const response = await fetch(`${API_BASE_URL}/api/session/${sessionId}/agent/AnalyticsAgent`);
         if (response.ok) {
           const data = await response.json();
-          if (data.result) {
-            setAnalyticsData(data.result);
+          if (data.data?.result) {
+            setAnalyticsData(data.data.result);
             setLastUpdated(new Date().toLocaleTimeString());
-            console.log('✅ Loaded analytics data from JSON file:', data.result);
+            console.log('✅ Loaded analytics data from API:', data.data.result);
           }
         } else {
-          console.log(`⚠️ Analytics file not found (${response.status}), will use mock data`);
+          console.log(`⚠️ Analytics not found (${response.status}), will use mock data`);
         }
       } catch (error) {
         console.log('⚠️ Analytics data not yet available, will use mock data:', error);

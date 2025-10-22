@@ -65,16 +65,18 @@ const OptimizationTab: React.FC<OptimizationTabProps> = ({
 
       setIsLoading(true);
       try {
-        const response = await fetch(`/agent_outputs/${sessionId}/optimizationagent_result.json`);
+        // Use backend API to load optimization data
+        const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+        const response = await fetch(`${API_BASE_URL}/api/session/${sessionId}/agent/OptimizationAgent`);
         if (response.ok) {
           const data = await response.json();
-          if (data.result) {
-            setOptimizationData(data.result);
+          if (data.data?.result) {
+            setOptimizationData(data.data.result);
             setLastUpdated(new Date().toLocaleTimeString());
-            console.log('✅ Loaded optimization data from JSON file:', data.result);
+            console.log('✅ Loaded optimization data from API:', data.data.result);
           }
         } else {
-          console.log(`⚠️ Optimization file not found (${response.status}), will use mock data`);
+          console.log(`⚠️ Optimization not found (${response.status}), will use mock data`);
         }
       } catch (error) {
         console.log('⚠️ Optimization data not yet available, will use mock data:', error);
