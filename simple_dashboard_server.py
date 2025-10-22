@@ -1039,12 +1039,24 @@ async def get_session(session_id: str):
 
 @app.get("/api/sessions")
 async def list_sessions():
-    """List all sessions"""
-    return {
-        "success": True,
-        "sessions": list(sessions.keys()),
-        "count": len(sessions)
-    }
+    """List all sessions from filesystem"""
+    try:
+        output_dir = Path("public/agent_outputs")
+        if not output_dir.exists():
+            return {"success": True, "sessions": [], "count": 0}
+        
+        # Get all session directories
+        session_dirs = [d.name for d in output_dir.iterdir() if d.is_dir() and d.name.startswith("session-")]
+        session_dirs.sort(reverse=True)  # Most recent first
+        
+        return {
+            "success": True,
+            "sessions": session_dirs,
+            "count": len(session_dirs)
+        }
+    except Exception as e:
+        print(f"Error listing sessions: {e}")
+        return {"success": True, "sessions": [], "count": 0}
 
 @app.get("/api/session/{session_id}/progress")
 async def get_session_progress_api(session_id: str):
