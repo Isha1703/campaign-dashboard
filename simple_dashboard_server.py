@@ -1880,15 +1880,18 @@ async def test_endpoint():
 if __name__ == "__main__":
     import uvicorn
     
+    # Get port from environment variable (Railway/Render) or use default
+    port = int(os.getenv("PORT", 8000))
+    
     print("Starting Marketing Campaign Dashboard Server")
     print("=" * 60)
-    print("Mode: Demo (Strands Agents + MCP Gateway simulation)")
+    print("Mode: Production (Strands Agents + MCP Gateway)")
     print("MCP Gateway: real-mcp-marketing-gateway-cfc6b1d0-6mdqt3b1cg")
-    print("Dashboard: http://localhost:8002")
-    print("API Docs: http://localhost:8002/docs")
+    print(f"Dashboard: http://0.0.0.0:{port}")
+    print(f"API Docs: http://0.0.0.0:{port}/docs")
     print("=" * 60)
     
-    uvicorn.run(app, host="0.0.0.0", port=8002)
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
 @app.get("/simple")
 async def simple_page():
