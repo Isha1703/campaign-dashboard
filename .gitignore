@@ -56,7 +56,7 @@ Thumbs.db
 
 # Session data (generated at runtime)
 public/agent_outputs/*
-!public/agent_outputs/demo-session/
+!public/agent_outputs/session-19304/
 public/downloads/
 
 # Large test files

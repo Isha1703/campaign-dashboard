@@ -1067,8 +1067,8 @@ async def list_sessions():
         if not output_dir.exists():
             return {"success": True, "sessions": [], "count": 0}
         
-        # Get all session directories (including demo sessions)
-        session_dirs = [d.name for d in output_dir.iterdir() if d.is_dir() and (d.name.startswith("session-") or d.name == "demo-session")]
+        # Get all session directories
+        session_dirs = [d.name for d in output_dir.iterdir() if d.is_dir() and d.name.startswith("session-")]
         session_dirs.sort(reverse=True)  # Most recent first
         
         return {
