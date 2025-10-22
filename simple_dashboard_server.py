@@ -1032,10 +1032,32 @@ async def provide_feedback(request: FeedbackRequest):
 @app.get("/api/session/{session_id}")
 async def get_session(session_id: str):
     """Get session data"""
-    if session_id not in sessions:
-        raise HTTPException(status_code=404, detail="Session not found")
+    # Check in-memory sessions first
+    if session_id in sessions:
+        return {"success": True, "data": sessions[session_id]}
     
-    return {"success": True, "data": sessions[session_id]}
+    # Try to load from filesystem (for demo sessions or persisted sessions)
+    try:
+        session_dir = Path(f"public/agent_outputs/{session_id}")
+        if session_dir.exists():
+            # Load session data from files
+            session_data = {
+                "session_id": session_id,
+                "status": "completed"
+            }
+            
+            # Try to load progress file
+            progress_file = session_dir / "session_progress.json"
+            if progress_file.exists():
+                with open(progress_file, 'r') as f:
+                    progress = json.load(f)
+                    session_data.update(progress)
+            
+            return {"success": True, "data": session_data}
+    except Exception as e:
+        print(f"Error loading session from filesystem: {e}")
+    
+    raise HTTPException(status_code=404, detail="Session not found")
 
 @app.get("/api/sessions")
 async def list_sessions():
@@ -1045,8 +1067,8 @@ async def list_sessions():
         if not output_dir.exists():
             return {"success": True, "sessions": [], "count": 0}
         
-        # Get all session directories
-        session_dirs = [d.name for d in output_dir.iterdir() if d.is_dir() and d.name.startswith("session-")]
+        # Get all session directories (including demo sessions)
+        session_dirs = [d.name for d in output_dir.iterdir() if d.is_dir() and (d.name.startswith("session-") or d.name == "demo-session")]
         session_dirs.sort(reverse=True)  # Most recent first
         
         return {
